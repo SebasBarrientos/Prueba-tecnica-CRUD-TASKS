@@ -85,7 +85,9 @@ const TodoControlleer = {
             if (typeof done === 'boolean') {
                 filter.done = done;
             }
-
+            if (Object.keys(filter).length === 0) {
+                return res.status(404).send({ message: 'No filters applied. Please provide at least one filter.' });
+            }
             const todos = await Todo.find(filter);
 
             if (todos.length === 0) {
