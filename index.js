@@ -7,7 +7,7 @@ app.use(express.json())
 
 
 dbConnection()
-app.use("/todo", require("./routes/todo"));
+app.use("/todos", require("./routes/todo"));
 
 
 
